@@ -3,6 +3,7 @@
 
 # Rust/Cargo build artifacts
 svg-renderer/target/
+base16-renderer/target/
 
 # IDE files
 .idea/
