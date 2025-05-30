@@ -1,0 +1,11 @@
+# macOS system files
+.DS_Store
+
+# Rust/Cargo build artifacts
+svg-renderer/target/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo

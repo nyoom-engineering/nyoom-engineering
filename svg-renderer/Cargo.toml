@@ -1,0 +1,8 @@
+[package]
+name = "svg_renderer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+resvg = "0.40.0"
+tiny-skia = { version = "0.10", features = ["png"] }
