@@ -1,3 +1,1 @@
-[[/out/logo-3840x1280.png]]
-
-branding repository
+<img src="./out/logo-3840x1280-shadow.png">
