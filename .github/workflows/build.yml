@@ -1,0 +1,46 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Cache dependencies
+        uses: Swatinem/rust-cache@v2
+
+      - name: Build svg-renderer
+        run: cargo build --manifest-path svg-renderer/Cargo.toml
+
+      - name: Build svg-replace
+        run: cargo build --manifest-path svg-replace/Cargo.toml
+
+      - name: Build base16-renderer
+        run: cargo build --manifest-path base16-renderer/Cargo.toml
+
+      - name: Run clippy
+        run: |
+          cargo clippy --manifest-path svg-renderer/Cargo.toml
+          cargo clippy --manifest-path svg-replace/Cargo.toml
+          cargo clippy --manifest-path base16-renderer/Cargo.toml
+
+      - name: Check formatting
+        run: |
+          cargo fmt --manifest-path svg-renderer/Cargo.toml -- --check
+          cargo fmt --manifest-path svg-replace/Cargo.toml -- --check
+          cargo fmt --manifest-path base16-renderer/Cargo.toml -- --check 

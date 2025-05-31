@@ -10,12 +10,16 @@ const RAW_LOGO: &str = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/../ass
 
 fn main() -> io::Result<()> {
     // palette
-    let path = env::args().nth(1).unwrap_or_else(|| "oxocarbon-dark.json".into());
-    let pal: BTreeMap<String, Value> =
-        serde_json::from_str(&fs::read_to_string(&path)?)
-            .map_err(|e| io::Error::new(io::ErrorKind::InvalidData, e))?;
+    let path = env::args()
+        .nth(1)
+        .unwrap_or_else(|| "oxocarbon-dark.json".into());
+    let pal: BTreeMap<String, Value> = serde_json::from_str(&fs::read_to_string(&path)?)
+        .map_err(|e| io::Error::new(io::ErrorKind::InvalidData, e))?;
     if pal.len() != 16 {
-        return Err(io::Error::new(io::ErrorKind::InvalidInput, "need 16 colours"));
+        return Err(io::Error::new(
+            io::ErrorKind::InvalidInput,
+            "need 16 colours",
+        ));
     }
 
     // logo without xml / doctype
@@ -46,7 +50,10 @@ fn main() -> io::Result<()> {
 
     // colour squares
     for (i, v) in pal.values().enumerate() {
-        let (x, y) = (PAD + (i as i32 % COLS) * CELL, PAD + (i as i32 / COLS) * CELL);
+        let (x, y) = (
+            PAD + (i as i32 % COLS) * CELL,
+            PAD + (i as i32 / COLS) * CELL,
+        );
         svg.push_str(&format!(
             r#"<rect x="{x}" y="{y}" width="{c}" height="{c}" fill="{}"/>
 "#,

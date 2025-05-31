@@ -1,8 +1,8 @@
-use std::{env, error::Error, fs};
 use resvg::{
     tiny_skia::{Color, Pixmap},
-    usvg::{fontdb::Database, Options, Tree, Transform},
+    usvg::{fontdb::Database, Options, Transform, Tree},
 };
+use std::{env, error::Error, fs};
 
 // default widths
 const DEF_W: &[u32] = &[3840, 2560, 1920, 1280, 800];
@@ -11,7 +11,10 @@ fn widths() -> Vec<u32> {
     env::var("WIDTHS")
         .ok()
         .and_then(|s| {
-            let v: Vec<u32> = s.split_whitespace().filter_map(|t| t.parse().ok()).collect();
+            let v: Vec<u32> = s
+                .split_whitespace()
+                .filter_map(|t| t.parse().ok())
+                .collect();
             (!v.is_empty()).then_some(v)
         })
         .unwrap_or_else(|| DEF_W.to_vec())

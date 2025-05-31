@@ -1,10 +1,19 @@
 use clap::Parser;
 use font_kit::{family_name::FamilyName as Fam, properties::Properties, source::SystemSource};
 use fontdue::Font;
-use std::{error::Error, fs::{self, File}, io::Write, path::Path};
+use std::{
+    error::Error,
+    fs::{self, File},
+    io::Write,
+    path::Path,
+};
 use xmltree::{Element, XMLNode};
 
-#[derive(Parser)] struct A { #[arg(num_args = 2)] w: Vec<String> }
+#[derive(Parser)]
+struct A {
+    #[arg(num_args = 2)]
+    w: Vec<String>,
+}
 
 fn main() -> Result<(), Box<dyn Error>> {
     // load SF Pro Display font
@@ -64,8 +73,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     // calculate new canvas width
     let args = A::parse();
     let right_pad = orig_w - left - glyph_width("Engineering");
-    let new_w =
-        left + args.w.iter().map(|s| glyph_width(s)).fold(0.0, f64::max) + right_pad;
+    let new_w = left + args.w.iter().map(|s| glyph_width(s)).fold(0.0, f64::max) + right_pad;
 
     // swap in text
     fn swap(e: &mut Element, v: &[String], n: &mut usize) {
@@ -88,7 +96,10 @@ fn main() -> Result<(), Box<dyn Error>> {
     // update width + viewBox
     svg.attributes.insert("width".into(), new_w.to_string());
     if let Some(vb) = svg.attributes.get_mut("viewBox") {
-        let mut p: Vec<f64> = vb.split_whitespace().filter_map(|s| s.parse().ok()).collect();
+        let mut p: Vec<f64> = vb
+            .split_whitespace()
+            .filter_map(|s| s.parse().ok())
+            .collect();
         if p.len() == 4 {
             p[2] = new_w;
             *vb = p.iter().map(f64::to_string).collect::<Vec<_>>().join(" ");

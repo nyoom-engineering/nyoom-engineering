@@ -4,13 +4,18 @@ This repository contains the designs and tooling for branding of the Nyoom Engin
 
 ## Dependencies
 
-GNU Make, Cargo/Rust, and the SF Pro Display font are required
+`GNU Make`, `Cargo`/`Rust`, and the `SF Pro Display` font are required
 
 ## Logo
 
-The `assets/` directory contains two vector logos for the project, one icon and one with text
+The `assets/` directory contains two vector logos for the project, one with only the icon and one with text
+
+- `logo-icon.svg`
 
 <img src="./out/icon-3840x3840-shadow.png" width="345">
+
+- `logo.svg`
+
 <img src="./out/logo-3840x1280-shadow.png" width="345">
 
 ## svg-renderer
@@ -56,7 +61,7 @@ cd base16-renderer
 cargo run -- base16.json
 ```
 
-Where `base16.json` is a json file containing a base16 colorscheme as key-value pairs with hexadecimal notation
+Where `base16.json` is a json file containing a base16 colorscheme as key-value pairs with hexadecimal notation. See `assets/oxocarbon-dark.json` for an example
 
 ## Makefile
 
