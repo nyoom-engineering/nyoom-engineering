@@ -35,7 +35,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     // base size
     let (w0, h0) = {
         let s = tree.size();
-        (s.width() as f32, s.height() as f32)
+        (s.width(), s.height())
     };
     if w0 == 0.0 || h0 == 0.0 {
         return Err("zero size".into());

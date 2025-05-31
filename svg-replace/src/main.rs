@@ -23,8 +23,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             .load()?
             .copy_font_data()
             .ok_or("font")?
-            .as_ref()
-            .to_vec(),
+            .as_ref(),
         Default::default(),
     )?;
 
@@ -37,8 +36,8 @@ fn main() -> Result<(), Box<dyn Error>> {
                 pen += f.horizontal_kern(p, ch, PX).unwrap_or(0.0);
             }
             let m = f.metrics(ch, PX);
-            let l = pen + m.bounds.xmin as f32;
-            let r = l + m.bounds.width as f32;
+            let l = pen + m.bounds.xmin;
+            let r = l + m.bounds.width;
             min = min.min(l);
             max = max.max(r);
             pen += m.advance_width;
