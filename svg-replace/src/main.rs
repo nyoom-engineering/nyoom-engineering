@@ -23,7 +23,8 @@ fn main() -> Result<(), Box<dyn Error>> {
             .load()?
             .copy_font_data()
             .ok_or("font")?
-            .as_ref(),
+            .as_ref()
+            .to_vec(),
         Default::default(),
     )?;
 
