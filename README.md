@@ -63,6 +63,18 @@ cargo run -- base16.json
 
 Where `base16.json` is a json file containing a base16 colorscheme as key-value pairs with hexadecimal notation. See `assets/oxocarbon-dark.json` for an example
 
+## ProjectGen
+
+For your convenience, the script `projectgen.sh` is supplied to quickly create branding for a Nyoom Engineering project.
+
+The following command requires [imagemagick](https://imagemagick.org/index.php) to be installed and added to PATH
+
+```
+./projectgen.sh "VSCode" "Oxocarbon"
+```
+
+An example of the output is found in the `assets` folder of the `oxocarbon-vscode` port
+
 ## Makefile
 
 For ease of development, a GNU Makefile is provided with the following: 
