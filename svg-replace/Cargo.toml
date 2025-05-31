@@ -4,5 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-clap      = { version = "4.5", features = ["derive"] }
-xmltree   = "0.10"
+clap     = { version = "4.5", features = ["derive"] }
+xmltree  = "0.10"
+font-kit = "0.11"
+fontdue  = "0.8"

@@ -1,22 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="448" height="544" viewBox="0 0 448 544">
-<rect width="100%" height="100%" fill="#000000" />
-<rect x="24" y="24" width="100" height="100" fill="#161616" />
-<rect x="124" y="24" width="100" height="100" fill="#262626" />
-<rect x="224" y="24" width="100" height="100" fill="#393939" />
-<rect x="324" y="24" width="100" height="100" fill="#525252" />
-<rect x="24" y="124" width="100" height="100" fill="#dde1e6" />
-<rect x="124" y="124" width="100" height="100" fill="#f2f4f8" />
-<rect x="224" y="124" width="100" height="100" fill="#ffffff" />
-<rect x="324" y="124" width="100" height="100" fill="#08bdba" />
-<rect x="24" y="224" width="100" height="100" fill="#3ddbd9" />
-<rect x="124" y="224" width="100" height="100" fill="#78a9ff" />
-<rect x="224" y="224" width="100" height="100" fill="#ee5396" />
-<rect x="324" y="224" width="100" height="100" fill="#33b1ff" />
-<rect x="24" y="324" width="100" height="100" fill="#ff7eb6" />
-<rect x="124" y="324" width="100" height="100" fill="#42be65" />
-<rect x="224" y="324" width="100" height="100" fill="#be95ff" />
-<rect x="324" y="324" width="100" height="100" fill="#82cfff" />
-<g transform="translate(24.00,445.00) scale(1.50000)">
+<rect width="100%" height="100%" fill="#000"/>
+<rect x="24" y="24" width="100" height="100" fill="#161616"/>
+<rect x="124" y="24" width="100" height="100" fill="#262626"/>
+<rect x="224" y="24" width="100" height="100" fill="#393939"/>
+<rect x="324" y="24" width="100" height="100" fill="#525252"/>
+<rect x="24" y="124" width="100" height="100" fill="#dde1e6"/>
+<rect x="124" y="124" width="100" height="100" fill="#f2f4f8"/>
+<rect x="224" y="124" width="100" height="100" fill="#ffffff"/>
+<rect x="324" y="124" width="100" height="100" fill="#08bdba"/>
+<rect x="24" y="224" width="100" height="100" fill="#3ddbd9"/>
+<rect x="124" y="224" width="100" height="100" fill="#78a9ff"/>
+<rect x="224" y="224" width="100" height="100" fill="#ee5396"/>
+<rect x="324" y="224" width="100" height="100" fill="#33b1ff"/>
+<rect x="24" y="324" width="100" height="100" fill="#ff7eb6"/>
+<rect x="124" y="324" width="100" height="100" fill="#42be65"/>
+<rect x="224" y="324" width="100" height="100" fill="#be95ff"/>
+<rect x="324" y="324" width="100" height="100" fill="#82cfff"/>
+<g transform="translate(24,445) scale(1.5)">
 <svg
    width="150"
    height="50"

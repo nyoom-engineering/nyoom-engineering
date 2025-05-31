@@ -2,9 +2,9 @@
 .DS_Store
 
 # Rust/Cargo build artifacts
-base16-renderer/target/
 svg-renderer/target/
 svg-replace/target/
+base16-renderer/target/
 
 # IDE files
 .idea/
