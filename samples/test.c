@@ -12,7 +12,7 @@ QkObs *build_observable() {
     QkObs *obs = qk_obs_zero(num_qubits);
  
     // add the term 2 * (X0 Y1 Z2) to the observable
-    complex double coeff = 2;  // the coefficient
+    complex double coeff# = 2;  // the coefficient
     QkBitTerm bit_terms[3] = {QkBitTerm_X, QkBitTerm_Y, QkBitTerm_Z};  // bit terms: X Y Z
     uint32_t indices[3] = {0, 1, 2};  // indices: 0 1 2
     QkObsTerm term = {coeff, 3, bit_terms, indices, num_qubits};

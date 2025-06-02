@@ -58,6 +58,5 @@ clean:
 	cargo clean --manifest-path $(SVG_CRATE_DIR)/Cargo.toml
 	cargo clean --manifest-path $(SVG_REPLACE_DIR)/Cargo.toml
 	cargo clean --manifest-path $(BASE16_CRATE_DIR)/Cargo.toml
-	rm -rf out
 
 .PHONY: all build $(SVG_FILES) base16 custom shadows clean

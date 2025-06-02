@@ -69,7 +69,7 @@ For your convenience, the script `projectgen.sh` is supplied to quickly create b
 
 The following command requires [imagemagick](https://imagemagick.org/index.php) to be installed and added to PATH
 
-```
+```sh
 ./projectgen.sh "VSCode" "Oxocarbon"
 ```
 
